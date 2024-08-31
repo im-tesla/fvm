@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fvm</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-base-200 h-screen font-mono">
+    <div class="flex justify-center p-3">
+        <h1 class="text-3xl font-bold">fvm</h1>
+    </div>
+
+    <div class="ml-[10%] mr-[10%]">
+        <div class="flex justify-between">
+            <h1 class="text-xl font-semibold mb-3">VMs</h1>
+            <svg class="h-5 cursor-pointer" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+            <div class="w-full p-2 bg-base-100 rounded-lg cursor-pointer">
+                <div class="flex items-center p-1">
+                    <img src="assets/arch.webp" class="h-8 mr-2">
+                    <div>
+                        <h1 class="font-semibold">Arch Linux</h1>
+                        <p class="font-medium text-gray-500 text-sm">Running</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full p-2 bg-base-100 rounded-lg cursor-pointer">
+                <div class="flex items-center p-1">
+                    <img src="assets/ubuntu.png" class="h-8 mr-2">
+                    <div>
+                        <h1 class="font-semibold">Ubuntu</h1>
+                        <p class="font-medium text-gray-500 text-sm">Stopped</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full p-2 bg-base-100 rounded-lg cursor-pointer">
+                <div class="flex items-center p-1">
+                    <img src="assets/kali.png" class="h-8 mr-2">
+                    <div>
+                        <h1 class="font-semibold">Kali Linux</h1>
+                        <p class="font-medium text-gray-500 text-sm">Stopped</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full p-2 bg-base-100 rounded-lg cursor-pointer">
+                <div class="flex items-center p-1">
+                    <img src="assets/fortnite.png" class="h-8 mr-2">
+                    <div>
+                        <h1 class="font-semibold">Fortnite</h1>
+                        <p class="font-medium text-gray-500 text-sm">Battle Royal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <h1 class="text-xl font-semibold mb-3 mt-10">Your system</h1>
+
+        <div class="w-full p-2 bg-base-100 rounded-lg mb-3">
+            <div class="flex items-center p-1">
+                <img src="assets/computer.webp" class="h-8 mr-2.5">
+                <div>
+                    <h1 class="font-semibold">System status</h1>
+                    <p class="font-medium text-gray-500 text-sm">Your computer is likely to run at full performance using HAXM</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+            <div class="w-full p-2 bg-base-100 rounded-lg">
+                <div class="flex items-center p-1">
+                    <svg class="mr-3" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-cpu"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 5m0 1a1 1 0 0 1 1 -1h12a1 1 0 0 1 1 1v12a1 1 0 0 1 -1 1h-12a1 1 0 0 1 -1 -1z" /><path d="M9 9h6v6h-6z" /><path d="M3 10h2" /><path d="M3 14h2" /><path d="M10 3v2" /><path d="M14 3v2" /><path d="M21 10h-2" /><path d="M21 14h-2" /><path d="M14 21v-2" /><path d="M10 21v-2" /></svg>
+                    <div>
+                        <h1 class="font-semibold">Intel i9 10900KF</h1>
+                        <p class="font-medium text-gray-500 text-sm">Processor</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full p-2 bg-base-100 rounded-lg">
+                <div class="flex items-center p-1">
+                    <svg class="mr-3" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-device-desktop"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10z" /><path d="M7 20h10" /><path d="M9 16v4" /><path d="M15 16v4" /></svg>
+                    <div>
+                        <h1 class="font-semibold">NVIDIA GeForce GTX 1070</h1>
+                        <p class="font-medium text-gray-500 text-sm">Graphics Card</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full p-2 bg-base-100 rounded-lg">
+                <div class="flex items-center p-1">
+                    <svg class="mr-3" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-tournament"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M20 10m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M4 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M4 20m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M6 12h3a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-3" /><path d="M6 4h7a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-2" /><path d="M14 10h4" /></svg>
+                    <div>
+                        <h1 class="font-semibold">ASUS ROG CROSSHAIR X670E HERO</h1>
+                        <p class="font-medium text-gray-500 text-sm">Motherboard</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full p-2 bg-base-100 rounded-lg">
+                <div class="flex items-center p-1">
+                    <svg class="mr-3" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-device-floppy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2" /><path d="M12 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M14 4l0 4l-6 0l0 -4" /></svg>
+                    <div>
+                        <h1 class="font-semibold">500GB SSD - Samsung 870 EVO</h1>
+                        <p class="font-medium text-gray-500 text-sm">Boot Drive</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

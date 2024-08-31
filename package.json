@@ -1,0 +1,10 @@
+{
+  "name": "fvm",
+  "version": "1.0.0",
+  "author": "anon",
+  "main": "main.js",
+  "scripts": {
+    "nw": "cd nwjs && nw.exe ../ && cd ..",
+    "kill": "taskkill /f /im nw.exe"
+  }
+}
