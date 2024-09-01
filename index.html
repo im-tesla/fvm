@@ -1,43 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow-hidden">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fvm</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* modals fix */
+        :root:has(:is(.modal-open,.modal:target,.modal-toggle:checked + .modal,.modal[open])) {
+            scrollbar-gutter: auto;
+        }
+    </style>
 </head>
 <body class="bg-base-200 h-screen font-mono">
     <div class="flex justify-center p-3">
         <h1 class="text-3xl font-bold">fvm</h1>
     </div>
 
-    <div class="ml-[10%] mr-[10%]">
+    <div class="ml-[10%] mr-[10%] flex flex-col mt-3">
         <div class="flex justify-between">
             <h1 class="text-xl font-semibold mb-3">VMs</h1>
-            <svg class="h-5 cursor-pointer" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
+            <svg onclick="setup_cpu_ram.showModal()" class="h-5 cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24"  height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
         </div>
         <div class="grid grid-cols-2 gap-3">
-            <div class="w-full p-2 bg-base-100 rounded-lg cursor-pointer">
-                <div class="flex items-center p-1">
-                    <img src="assets/arch.webp" class="h-8 mr-2">
-                    <div>
-                        <h1 class="font-semibold">Arch Linux</h1>
-                        <p class="font-medium text-gray-500 text-sm">Running</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="w-full p-2 bg-base-100 rounded-lg cursor-pointer">
-                <div class="flex items-center p-1">
-                    <img src="assets/ubuntu.png" class="h-8 mr-2">
-                    <div>
-                        <h1 class="font-semibold">Ubuntu</h1>
-                        <p class="font-medium text-gray-500 text-sm">Stopped</p>
-                    </div>
-                </div>
-            </div>
-
+            <!--  
             <div class="w-full p-2 bg-base-100 rounded-lg cursor-pointer">
                 <div class="flex items-center p-1">
                     <img src="assets/kali.png" class="h-8 mr-2">
@@ -45,22 +32,13 @@
                         <h1 class="font-semibold">Kali Linux</h1>
                         <p class="font-medium text-gray-500 text-sm">Stopped</p>
                     </div>
-                </div>
+                </div>         
             </div>
-
-            <div class="w-full p-2 bg-base-100 rounded-lg cursor-pointer">
-                <div class="flex items-center p-1">
-                    <img src="assets/fortnite.png" class="h-8 mr-2">
-                    <div>
-                        <h1 class="font-semibold">Fortnite</h1>
-                        <p class="font-medium text-gray-500 text-sm">Battle Royal</p>
-                    </div>
-                </div>
-            </div>
+             --> 
+             <h1 class="mb-2 text-[0.85rem]">No VMs, use the plus to add your first one</h1>
         </div>
-        
+    
         <h1 class="text-xl font-semibold mb-3 mt-10">Your system</h1>
-
         <div class="w-full p-2 bg-base-100 rounded-lg mb-3">
             <div class="flex items-center p-1">
                 <img src="assets/computer.webp" class="h-8 mr-2.5">
@@ -114,5 +92,131 @@
         </div>
     </div>
 
+    <dialog id="setup_cpu_ram" class="modal">
+        <div class="modal-box">
+            <h3 class="text-xl font-bold">Create new VM</h3>
+            <p class="text-sm">Create new virtual machine, use ESC to exit from modal</p>
+
+            <div class="mt-4">
+                <label class="block text-sm font-medium text-gray-700">Name</label>
+                <input type="text" class="input input-bordered w-full mt-1" placeholder="New VM 1">
+            </div>
+
+            <div class="mt-4">
+                <label class="block text-sm font-medium text-gray-700 mb-1">RAM</label>
+                <input type="range" min="1" max="16" value="1" class="range range-sm" step="1" />
+                <div class="flex w-full justify-between px-2 text-xs">
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                    <span>6</span>
+                    <span>7</span>
+                    <span>8</span>
+                    <span>9</span>
+                    <span>10</span>
+                    <span>11</span>
+                    <span>12</span>
+                    <span>13</span>
+                    <span>14</span>
+                    <span>15</span>
+                    <span>16</span>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <label class="block text-sm font-medium text-gray-700 mb-1">CPU Cores</label>
+                <input type="range" min="1" max="8" value="1" class="range range-sm" id="cpuusp" />
+                <div class="flex w-full justify-between px-2 text-xs">
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                    <span>6</span>
+                    <span>7</span>
+                    <span>8</span>
+                </div>
+            </div>            
+            
+            <div class="modal-action">
+            <form method="dialog">
+                <button onclick="setup_disk.showModal()" class="btn">Next</button>
+            </form>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="setup_disk" class="modal">
+        <div class="modal-box">
+            <h3 class="text-xl font-bold">Setup disk space</h3>
+            <p class="text-sm">Create new virtual machine, use ESC to exit from modal</p>
+
+            <div class="mt-4">
+                <label class="block text-sm font-medium text-gray-700">Disk space</label>
+                <input onchange="console.log(document.getElementById('cdsa').value)" id="cdsa" type="range" min="1" max="1000" value="1" class="range range-sm" step="20" />
+                <div class="flex w-full justify-between px-2 text-xs">
+                  <span>1GB</span>
+                  <span>500GB</span>
+                  <span>1TB</span>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Disk type</label>
+                <select class="select select-bordered w-full">
+                    <option>qcow2</option>
+                    <option>RAW</option>
+                </select>
+            </div>
+            
+            <div class="modal-action">
+            <form method="dialog">
+                <button onclick="setup_cpu_ram.showModal()" class="btn">Back</button>
+                <button onclick="review.showModal()" class="btn">Next</button>
+            </form>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="review" class="modal">
+        <div class="modal-box">
+            <h3 class="text-xl font-bold">Review your new VM</h3>
+
+            <div class="mt-4">
+                <label class="block text-sm font-medium text-gray-700">Name</label>
+                <input type="text" class="input input-bordered w-full mt-1" value="New VM 1" disabled>
+            </div>
+
+            <div class="mt-4">
+                <label class="block text-sm font-medium text-gray-700 mb-1">RAM</label>
+                <input type="text" class="input input-bordered w-full mt-1" value="4GB" disabled>
+            </div>
+
+            <div class="mt-4">
+                <label class="block text-sm font-medium text-gray-700 mb-1">CPU Cores</label>
+                <input type="text" class="input input-bordered w-full mt-1" value="2" disabled>
+            </div>
+
+            <div class="mt-4">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Disk space</label>
+                <input type="text" class="input input-bordered w-full mt-1" value="100GB" disabled>
+            </div>
+
+            <div class="mt-4">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Disk type</label>
+                <input type="text" class="input input-bordered w-full mt-1" value="qcow2" disabled>
+            </div>
+
+            <div class="modal-action">
+            <form method="dialog">
+                <button onclick="setup_disk.showModal()" class="btn">Back</button>
+                <button class="btn">Create</button>
+            </form>
+            </div>
+        </div>
+    </dialog>
+    <script src="index.js"></script>
 </body>
 </html>
